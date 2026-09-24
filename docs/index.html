@@ -101,6 +101,41 @@
     padding: 1px 8px; margin-left: 8px; vertical-align: middle;
   }
 
+  /* AI map (block diagram) */
+  .aimap { margin-top: 8px; }
+  .aimap-main {
+    display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
+  }
+  .aimap-main.branch { margin-top: 8px; }
+  .aimap-box {
+    background: #fff; border: 1px solid var(--line); border-radius: 6px;
+    padding: 12px 18px; font-size: 13.5px; text-align: center; min-width: 96px;
+  }
+  .aimap-box.ai { background: #FDF2E1; border-color: #EFD9A8; }
+  .aimap-box .bn {
+    display: block; font-family: "IBM Plex Mono", monospace; font-size: 11px;
+    color: var(--blue-deep); margin-bottom: 3px;
+  }
+  .aimap-box.ai .bn { color: var(--amber); }
+  .aimap-box small {
+    display: block; font-family: "IBM Plex Mono", monospace; font-size: 10px;
+    color: var(--amber); margin-top: 2px;
+  }
+  .aimap-arrow { color: var(--ink-soft); font-size: 16px; }
+  .aimap-tie { text-align: center; margin: 12px 0; }
+  .aimap-tie .tie-label {
+    font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--ink-soft);
+  }
+  .aimap-legend {
+    display: flex; gap: 26px; justify-content: center; margin-top: 24px; flex-wrap: wrap;
+  }
+  .aimap-legend .legend-item {
+    font-size: 13px; color: var(--ink-soft); display: flex; align-items: center; gap: 7px;
+  }
+  .aimap-legend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .aimap-legend .dot.safe { background: var(--blue); }
+  .aimap-legend .dot.ai { background: var(--amber); }
+
   .guard-box {
     background: var(--blue-pale); border: 1px solid #C9DAEB; border-radius: 6px;
     padding: 24px; margin-top: 28px;
@@ -216,6 +251,7 @@
       <a class="btn primary" href="https://github.com/rupivbluegreen/dwg-bom">View on GitHub</a>
       <a class="btn ghost" href="#web-ui">See the web UI</a>
       <a class="btn ghost" href="#pipeline">How it works</a>
+      <a class="btn ghost" href="#ai-map">Where's the AI?</a>
     </div>
   </div>
 </header>
@@ -323,6 +359,56 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="ai-map">
+  <div class="wrap">
+    <h2>Where the AI is &mdash; and isn't</h2>
+    <p class="section-sub">
+      Six of the seven stages are plain, deterministic Python that run on every drawing.
+      Exactly one is a model, and it only ever sees what the other six couldn't already place.
+    </p>
+
+    <div class="aimap">
+      <div class="aimap-main">
+        <div class="aimap-box safe"><span class="bn">1</span>Convert</div>
+        <div class="aimap-arrow">&rarr;</div>
+        <div class="aimap-box safe"><span class="bn">2</span>Extract</div>
+        <div class="aimap-arrow">&rarr;</div>
+        <div class="aimap-box safe"><span class="bn">3</span>Rules</div>
+        <div class="aimap-arrow">&rarr;</div>
+        <div class="aimap-box safe"><span class="bn">6</span>Assemble</div>
+        <div class="aimap-arrow">&rarr;</div>
+        <div class="aimap-box safe"><span class="bn">7</span>Export</div>
+      </div>
+
+      <div class="aimap-tie">
+        <span class="tie-label">&darr; only notes stage 3 couldn't classify (typically ~5%)</span>
+      </div>
+
+      <div class="aimap-main branch">
+        <div class="aimap-box ai"><span class="bn">4</span>Local LLM<small>optional</small></div>
+        <div class="aimap-arrow">&rarr;</div>
+        <div class="aimap-box safe"><span class="bn">5</span>Guard</div>
+      </div>
+
+      <div class="aimap-tie">
+        <span class="tie-label">&uarr; verified answers merge back in before stage 6</span>
+      </div>
+    </div>
+
+    <div class="aimap-legend">
+      <span class="legend-item"><span class="dot safe"></span>No AI &mdash; deterministic Python (6 of 7 stages)</span>
+      <span class="legend-item"><span class="dot ai"></span>Optional local LLM &mdash; stage 4 only, leftover notes only</span>
+    </div>
+
+    <p class="section-sub" style="margin-top:20px;">
+      On sheet A-05 that's 2 notes out of 38 &mdash; and even those 2 pass through the Guard
+      (stage 5, also plain Python) before reaching the BOM. Run with <code>--no-llm</code> and
+      stages 1&ndash;3, 6 and 7 alone still produce a full draft; leftover notes are just labelled
+      <code>unmatched</code> instead of classified.
+    </p>
   </div>
 </section>
 

@@ -16,13 +16,23 @@ flowchart LR
     A[drawing.dwg] -->|1. convert\nLibreDWG dwg2dxf| B[drawing.dxf]
     B -->|2. extract\nezdxf| C[(extraction.json\nnotes, dims, blocks,\nlinework, viewports,\ntitle block)]
     C -->|3. rules\nregex + arithmetic| D{placed?}
-    D -->|yes| F[material lines\n+ unit flags]
+    D -->|yes, ~95% of notes| F[material lines\n+ unit flags]
     D -->|no: leftover notes| E[4. local LLM\nOllama / Qwen\nclassify only]
     E -->|5. guard\nids + numbers checked| F
     F -->|6. assemble\nmass/m, evidence, status| G[BOM rows]
     G -->|7. export| H[BOM.xlsx + bom.json]
     H --> I[estimator fills\nyellow cells]
+
+    classDef ai fill:#FDF2E1,stroke:#C98A2B,color:#5b3d10;
+    classDef safe fill:#E7EEF5,stroke:#3A6EA5,color:#1C2B39;
+    class E ai;
+    class A,B,C,D,F,G,H,I safe;
 ```
+
+Only stage 4 (amber) ever touches a model, and only for the notes stages 1-3 couldn't
+already place deterministically. Stage 5's guard, which checks stage 4's output, is
+plain Python too. Run with `--no-llm` and stages 1-3, 6 and 7 alone still produce a
+full draft - leftover notes are labelled `unmatched` instead of classified.
 
 | # | Stage | Module | Tool | Output | Uses AI? |
 |---|-------|--------|------|--------|----------|
