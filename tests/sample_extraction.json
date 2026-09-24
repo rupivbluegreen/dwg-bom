@@ -1,0 +1,736 @@
+{
+  "schema": "dwg-bom/extraction@1",
+  "_comment": "Sample reconstructed from 'Architectural - Annotation Scaling and Multileaders.dwg' (sheet A-05) by decoding the DWG's text directly. IDs are placeholders (real runs use entity handles); block insert counts and linework lengths were not decoded, so they are null/empty.",
+  "source": {
+    "file": "architectural_-_annotation_scaling_and_multileaders.dwg",
+    "sha256": null,
+    "dxf": null,
+    "dxfversion": "AC1021",
+    "units": "in",
+    "metres_per_unit": 0.0254,
+    "audit_issues": []
+  },
+  "layouts": [
+    "Model",
+    "SECTIONS AND DETAILS"
+  ],
+  "layers": [
+    "Arch_Detail_Door",
+    "Arch_Section_Ceiling",
+    "Arch_Section_Handrail",
+    "Arch_Section_Insul",
+    "Arch_Section_Truss",
+    "Arch_Section_VP",
+    "Arch_Section_Wall",
+    "Center",
+    "Defpoints",
+    "Dim",
+    "Foundation_Plan_Dim",
+    "Mleader",
+    "PS_Annot",
+    "PS_Viewport",
+    "Stair_Conc.",
+    "Struc_Plan_Deck",
+    "Struc_Section_BP",
+    "Struc_Section_Conc",
+    "Struc_Section_Dim",
+    "Struc_Section_MachineBolt",
+    "Struc_Section_Stair",
+    "Struc_Section_Steel",
+    "Structural_Section_StAngle",
+    "Structural_SteelBeam",
+    "Structural_Steel_Deck",
+    "Structural_Steel_Joist",
+    "TB_BORDER",
+    "TB_CORNERS",
+    "TB_INFORMATION",
+    "TB_TEXT1",
+    "TB_TEXT2",
+    "TB_TEXT3",
+    "TB_TEXT4",
+    "Title"
+  ],
+  "title_block": {
+    "title": {
+      "SHEETNUMBER": "A-05",
+      "SHEET_CONTENT1": "STAIR SECTIONS",
+      "SHEET_CONTENT2": "DETAILS",
+      "PROJECT_NAME": "INTERNATIONAL ROAD DYNAMICS",
+      "PROJECT_PHASE": "ADDITION - PHASE1",
+      "PROJECT_STREET": "321 FIRST ST.",
+      "PROJECT_CITY": "SASKATOON, SK 99999",
+      "CLIENT_NAME": "ALLAN CONSTRUCTION LTD.",
+      "CLIENT_STREET": "123 MAIN ST.",
+      "DATE": "JAN. 2003",
+      "REVISION": "RELEASED FOR BLDG. PERMIT"
+    }
+  },
+  "viewports": [
+    {
+      "id": "V1",
+      "layout": "SECTIONS AND DETAILS",
+      "label": "STAIR SECTION 1",
+      "scale_factor": 48,
+      "scale": "1/4\" = 1'-0\"  (1:48)"
+    },
+    {
+      "id": "V2",
+      "layout": "SECTIONS AND DETAILS",
+      "label": "STAIR SECTION 2",
+      "scale_factor": 48,
+      "scale": "1/4\" = 1'-0\"  (1:48)"
+    },
+    {
+      "id": "V3",
+      "layout": "SECTIONS AND DETAILS",
+      "label": "STAIR DETAIL 1",
+      "scale_factor": 24,
+      "scale": "1/2\" = 1'-0\"  (1:24)"
+    },
+    {
+      "id": "V4",
+      "layout": "SECTIONS AND DETAILS",
+      "label": "STAIR DETAIL 2",
+      "scale_factor": 4,
+      "scale": "3\" = 1'-0\"  (1:4)"
+    }
+  ],
+  "texts": [
+    {
+      "id": "N01",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "EPDM ROOF CONSTRUCTION:\nEPDM ROOFING MEMBRANE\n3/4\"[19] T & G PLYWOOD SHEATHING\nTJI ROOF JOISTS\nVAPOR BARRIER\n1/2\"[12.5] GYPSUM BOARD\nSUSPENDED ACOUSTIC TILE",
+      "raw": "EPDM ROOF CONSTRUCTION:\\PEPDM ROOFING MEMBRANE\\P3/4\"[19] T & G PLYWOOD SHEATHING\\PTJI ROOF JOISTS\\PVAPOR BARRIER\\P1/2\"[12.5] GYPSUM BOARD\\PSUSPENDED ACOUSTIC TILE"
+    },
+    {
+      "id": "N02",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "2\"x6\" [38x140] WALL\nFRAMING",
+      "raw": "\\A1;{\\W1.15;2\"x6\" [38x140] WALL\\PFRAMING}"
+    },
+    {
+      "id": "N03",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "3/4\"[30] O.S.B SHEATHING",
+      "raw": "\\A1;{\\W1.15;3/4\"[30] O.S.B SHEATHING}"
+    },
+    {
+      "id": "N04",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "1/2\"[12.5] GYPSUM BOARD",
+      "raw": "{\\W1.15;1/2\"[12.5] GYPSUM BOARD}"
+    },
+    {
+      "id": "N05",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "POLISHED ALUM.\nCHECKER PLATE PANEL (TYP.)",
+      "raw": "\\A1;{\\W1.15;POLISHED ALUM.\\PCHECKER PLATE PANEL (TYP.)}"
+    },
+    {
+      "id": "N06",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "HSS 1-1/2\"x1-1/2\" [38x38]\nRAILING (TYP.)",
+      "raw": "{\\W1.15;HSS 1-1/2\"x1-1/2\" [38x38] \\PRAILING (TYP.)}"
+    },
+    {
+      "id": "N07",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "9.5Ø CABLES (TYP.)",
+      "raw": "{\\W1.15;9.5%%C CABLES (TYP.)}"
+    },
+    {
+      "id": "N08",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "HSS 1-1/2\"x1-1/2\"\n[38x38] POSTS (TYP.)",
+      "raw": "{\\W1.15;HSS 1-1/2\"x1-1/2\" \\P[38x38] POSTS (TYP.)}"
+    },
+    {
+      "id": "N09",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "POLISHED ALUM. CHECKER\nPLATE PANEL (TYP.)",
+      "raw": "{\\W1.15;POLISHED ALUM. CHECKER \\PPLATE PANEL (TYP.)}"
+    },
+    {
+      "id": "N10",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "POLISHED ALUM. CHECKER\nPLATE PANEL (TYP.)",
+      "raw": "{\\W1.15;POLISHED ALUM. CHECKER \\PPLATE PANEL (TYP.)}"
+    },
+    {
+      "id": "N11",
+      "kind": "MTEXT",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "CABLES"
+    },
+    {
+      "id": "N12",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "22Ø HOLE",
+      "raw": "{\\W1.15;\\C256;22%%C HOLE}"
+    },
+    {
+      "id": "N13",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "2\"x6\" [38x140] WALL\nFRAMING",
+      "raw": "\\A1;{\\W1.15;2\"x6\" [38x140] WALL\\PFRAMING}"
+    },
+    {
+      "id": "N14",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "3/4\"[30] O.S.B SHEATHING",
+      "raw": "\\A1;{\\W1.15;3/4\"[30] O.S.B SHEATHING}"
+    },
+    {
+      "id": "N15",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "1/2\"[12.5] GYPSUM BOARD",
+      "raw": "{\\W1.15;1/2\"[12.5] GYPSUM BOARD}"
+    },
+    {
+      "id": "N16",
+      "kind": "MTEXT",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "W12"
+    },
+    {
+      "id": "N17",
+      "kind": "MTEXT",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "W410"
+    },
+    {
+      "id": "N18",
+      "kind": "MTEXT",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "C250"
+    },
+    {
+      "id": "N19",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "S.S. BOLT AND ACORN NUT\n(NUT TO OUTSIDE)",
+      "raw": "{\\W1.15;\\C256;S.S. BOLT AND ACORN NUT\\P(NUT TO OUTSIDE)}"
+    },
+    {
+      "id": "N20",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "4x38x38 PLATE-WELDED\nTO POST (PAINT)",
+      "raw": "{\\W1.15;4x\\H0.9583x;38\\H1.0435x;x\\H0.9583x;38 PLATE-WELDED\\PTO POST (PAINT)}"
+    },
+    {
+      "id": "N21",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "9.5Ø S.S. CABLE C/W S.S.\nCRIMPED-ON STUD END & S.S. NUT",
+      "raw": "\\A1;{\\W1.15;\\C256;9.5%%C S.S. CABLE C/W S.S.\\PCRIMPED-ON STUD END & S.S. NUT}"
+    },
+    {
+      "id": "N22",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "OUTSIDE FACE OF\nGRADE BEAM BELOW",
+      "raw": "\\A1;{\\W1.15;OUTSIDE FACE OF\\PGRADE BEAM BELOW}"
+    },
+    {
+      "id": "N23",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "OUTSIDE FACE OF\nGRADE BEAM BELOW",
+      "raw": "\\A1;{\\W1.15;OUTSIDE FACE OF\\PGRADE BEAM BELOW}"
+    },
+    {
+      "id": "N24",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "W250",
+      "raw": "\\A1;{\\W1.15;W250}"
+    },
+    {
+      "id": "N25",
+      "kind": "MTEXT",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "W410"
+    },
+    {
+      "id": "N26",
+      "kind": "MTEXT",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "C250"
+    },
+    {
+      "id": "N27",
+      "kind": "MTEXT",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "C250"
+    },
+    {
+      "id": "N28",
+      "kind": "MULTILEADER",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "OUTSIDE FACE OF\nGRADE BEAM BELOW",
+      "raw": "\\A1;{\\W1.15;OUTSIDE FACE OF\\PGRADE BEAM BELOW}"
+    },
+    {
+      "id": "N29",
+      "kind": "MTEXT",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "C250"
+    },
+    {
+      "id": "N30",
+      "kind": "MTEXT",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "C250"
+    },
+    {
+      "id": "N31",
+      "kind": "MTEXT",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "350 OWSJ"
+    },
+    {
+      "id": "N32",
+      "kind": "MTEXT",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "W310x39",
+      "raw": "W310{\\A1;\\W1.15;\\C256;x39}"
+    },
+    {
+      "id": "N33",
+      "kind": "MTEXT",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "W410"
+    },
+    {
+      "id": "N34",
+      "kind": "MTEXT",
+      "layer": "Arch_Section_Wall",
+      "space": "model",
+      "block": null,
+      "text": "ELEV. 5'-10 1/2\" TOP OF LANDING",
+      "raw": "\\A1;ELEV. 5'-10\\H0.7x;\\S1/2;\" TOP OF LANDING"
+    },
+    {
+      "id": "N35",
+      "kind": "MTEXT",
+      "layer": "Arch_Section_Wall",
+      "space": "model",
+      "block": null,
+      "text": "ELEV. 11'-9\" TOP OF SECOND FLR."
+    },
+    {
+      "id": "N36",
+      "kind": "MTEXT",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "SEE:"
+    },
+    {
+      "id": "N37",
+      "kind": "MTEXT",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "SEE:"
+    },
+    {
+      "id": "N38",
+      "kind": "MTEXT",
+      "layer": "Mleader",
+      "space": "model",
+      "block": null,
+      "text": "SEE:"
+    }
+  ],
+  "dimensions": [
+    {
+      "id": "D01",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "9'-0\" [2743]",
+      "shown_raw": "9'-0\" [2743]"
+    },
+    {
+      "id": "D02",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "8'-8\" [2642]",
+      "shown_raw": "8'-8\" [2642]"
+    },
+    {
+      "id": "D03",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "0'-4\"\n[102]",
+      "shown_raw": "0'-4\"\\P[102]"
+    },
+    {
+      "id": "D04",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "1'-0\"\n[305]",
+      "shown_raw": "1'-0\"\\P[305]"
+    },
+    {
+      "id": "D05",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "9'-0\" [2743]",
+      "shown_raw": "9'-0\" [2743]"
+    },
+    {
+      "id": "D06",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "4'-8\"\n[1422]",
+      "shown_raw": "4'-8\"\\P [1422]"
+    },
+    {
+      "id": "D07",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "5'-10 1/2\"\n[1791]",
+      "shown_raw": "5'-10 1/2\"\\P [1791]"
+    },
+    {
+      "id": "D08",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "22'-8\" [6909]",
+      "shown_raw": "22'-8\" [6909]"
+    },
+    {
+      "id": "D09",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "5'-0\" [1524]",
+      "shown_raw": "5'-0\" [1524]"
+    },
+    {
+      "id": "D10",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "1-1/4\"\n[33]",
+      "shown_raw": "1-{\\H0.7x;\\S1/4;}\"\\P[33]"
+    },
+    {
+      "id": "D11",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "32'-6\" [9906]",
+      "shown_raw": "32'-6\" [9906]"
+    },
+    {
+      "id": "D12",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "11'-9\" [3581]",
+      "shown_raw": "11'-9\" [3581]"
+    },
+    {
+      "id": "D13",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "20'-9\" [6325]",
+      "shown_raw": "20'-9\" [6325]"
+    },
+    {
+      "id": "D14",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "3'-6\"\n[1067]",
+      "shown_raw": "3'-6\"\\P[1067]"
+    },
+    {
+      "id": "D15",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "1'-0\"\n[305]",
+      "shown_raw": "1'-0\"\\P[305]"
+    },
+    {
+      "id": "D16",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "3'-0\"\n[914]",
+      "shown_raw": "3'-0\"\\P[914]"
+    },
+    {
+      "id": "D17",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "3'-0\"\n[914]",
+      "shown_raw": "3'-0\"\\P[914]"
+    },
+    {
+      "id": "D18",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "0'-4\"\n[102]",
+      "shown_raw": "0'-4\"\\P[102]"
+    },
+    {
+      "id": "D19",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "0'-6\" [152]",
+      "shown_raw": "0'-6\" [152]"
+    },
+    {
+      "id": "D20",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "1'-1\"\n[330]",
+      "shown_raw": "1'-1\"\\P[330]"
+    },
+    {
+      "id": "D21",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "9'-0\" [2743]",
+      "shown_raw": "9'-0\" [2743]"
+    },
+    {
+      "id": "D22",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "11'-9\" [3581]",
+      "shown_raw": "11'-9\" [3581]"
+    },
+    {
+      "id": "D23",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "4'-0\"\n[1219]",
+      "shown_raw": "4'-0\"\\P[1219]"
+    },
+    {
+      "id": "D24",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "3'-6\"\n[1067]",
+      "shown_raw": "3'-6\"\\P[1067]"
+    },
+    {
+      "id": "D25",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "5'-10 1/2\"\n[1791]",
+      "shown_raw": "5'-10 1/2\"\\P[1791]"
+    },
+    {
+      "id": "D26",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "8'-6 1/2\"\n[2604]",
+      "shown_raw": "8'-6 1/2\"\\P[2604]"
+    },
+    {
+      "id": "D27",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "9'-1 1/2\"\n[2781]",
+      "shown_raw": "9'-1 1/2\"\\P[2781]"
+    },
+    {
+      "id": "D28",
+      "layer": "Struc_Section_Dim",
+      "space": "model",
+      "block": null,
+      "measurement": null,
+      "override": "",
+      "shown": "12'-2\"\n[3708]",
+      "shown_raw": "12'-2\"\\P[3708]"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "C250x23",
+      "count": null,
+      "layers": [],
+      "spaces": [
+        "model"
+      ]
+    },
+    {
+      "name": "W250x33",
+      "count": null,
+      "layers": [],
+      "spaces": [
+        "model"
+      ]
+    },
+    {
+      "name": "STAIR",
+      "count": null,
+      "layers": [],
+      "spaces": [
+        "model"
+      ]
+    }
+  ],
+  "linework": []
+}

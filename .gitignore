@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+out/
+instance/
+*.dwg
+*.dxf
+.DS_Store
+CLAUDE.md

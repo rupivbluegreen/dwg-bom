@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dwg-bom</title>
+<style>
+  :root {
+    --paper: #F7F6F2;
+    --ink: #1C2B39;
+    --blue: #3A6EA5;
+    --line: #D8D4C8;
+    --error: #B3452C;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 16px; margin-bottom: 32px; }
+  h1 { font-size: 28px; margin: 0 0 4px; letter-spacing: 0.5px; }
+  .tag { color: var(--blue); font-family: "IBM Plex Mono", "SF Mono", Consolas, monospace; font-size: 13px; }
+  form { border: 1px solid var(--line); background: #fff; padding: 24px; border-radius: 4px; }
+  form label > strong { font-size: 14px; }
+  input[type=file] {
+    display: block; width: 100%; margin-top: 8px; padding: 10px;
+    border: 1px dashed var(--line); border-radius: 3px; background: var(--paper);
+    font-family: inherit; font-size: 14px; color: var(--ink);
+  }
+  label.check {
+    display: flex; gap: 8px; align-items: center; font-size: 14px; margin: 20px 0;
+  }
+  button {
+    background: var(--blue); color: #fff; border: none; padding: 10px 24px;
+    font-size: 15px; border-radius: 3px; cursor: pointer; font-family: inherit;
+  }
+  button:hover { background: #2f5c8a; }
+  button:disabled { background: #93a6b8; cursor: default; }
+  .log {
+    background: var(--ink); color: #D7E4F0; font-family: "IBM Plex Mono", Consolas, monospace;
+    font-size: 13px; padding: 16px; border-radius: 4px; white-space: pre-wrap; margin-top: 24px;
+  }
+  .downloads { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+  .downloads a {
+    color: var(--blue); text-decoration: none; border: 1px solid var(--blue);
+    padding: 10px 14px; border-radius: 3px; font-family: "IBM Plex Mono", Consolas, monospace; font-size: 14px;
+  }
+  .downloads a:hover { background: var(--blue); color: #fff; }
+  .error {
+    background: #FBEAE5; border: 1px solid var(--error); color: var(--error);
+    padding: 14px 16px; border-radius: 4px; margin-top: 20px; font-size: 14px;
+  }
+  .stats { font-size: 13px; color: #5b6b78; margin-top: 10px; }
+  footer { margin-top: 48px; font-size: 12px; color: #8b8f8a; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>dwg-bom</h1>
+    <div class="tag">DWG &rarr; draft bill of materials, fully local</div>
+  </header>
+
+  <form action="/run" method="post" enctype="multipart/form-data" id="run-form">
+    <label for="drawing"><strong>Drawing</strong> (.dwg or .dxf)</label>
+    <input type="file" id="drawing" name="drawing" accept=".dwg,.dxf" required>
+
+    <label class="check">
+      <input type="checkbox" name="use_llm" {% if llm_default %}checked{% endif %}>
+      Use local AI model for leftover notes
+    </label>
+
+    <button type="submit" id="run-btn">Run</button>
+  </form>
+
+  {% if error %}
+    <div class="error"><strong>Error:</strong> {{ error }}</div>
+  {% endif %}
+
+  {% if log %}
+    <div class="log">{{ log }}</div>
+  {% endif %}
+
+  {% if files %}
+    <div class="downloads">
+      {% for kind, info in kinds.items() %}
+        {% if kind in files %}
+          <a href="/download/{{ run_id }}/{{ kind }}">&darr; {{ info[0] }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="stats">
+      {{ stats.bom_rows }} BOM row(s), {{ stats.errors }} error(s) to fix, {{ stats.rule_lines }} rule line(s){% if stats.model %}, LLM model: {{ stats.model }}{% endif %}
+    </div>
+  {% endif %}
+
+  <footer>Runs entirely on this machine &mdash; no drawing data leaves it.</footer>
+</div>
+<script>
+  document.getElementById('run-form').addEventListener('submit', function () {
+    var btn = document.getElementById('run-btn');
+    btn.disabled = true;
+    btn.textContent = 'Running…';
+  });
+</script>
+</body>
+</html>
